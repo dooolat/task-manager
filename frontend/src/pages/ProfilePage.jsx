@@ -32,11 +32,12 @@ export const ProfilePage = () => {
             </div>
           </dl>
 
-          <div className="profile-card__actions">
-            <Button variant="danger" onClick={logout}>
-              Logout
-            </Button>
-          </div>
+        </div>
+
+        <div className="profile-card__footer">
+          <Button variant="danger" onClick={logout}>
+            Logout
+          </Button>
         </div>
       </Card>
     </div>

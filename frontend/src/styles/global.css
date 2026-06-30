@@ -766,14 +766,18 @@ textarea {
   font-weight: 700;
 }
 
-.profile-card__actions {
-  margin-top: 8px;
-  padding-top: 16px;
-}
-
 .profile-list dd {
   margin: 0;
   color: var(--text-muted);
+}
+
+.profile-card__footer {
+  grid-column: 2;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 14px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
 }
 
 .empty-state {
@@ -852,6 +856,10 @@ textarea {
 
   .profile-card {
     display: grid;
+  }
+
+  .profile-card__footer {
+    grid-column: 1;
   }
 
   .form-grid,
