@@ -741,6 +741,11 @@ textarea {
   font-weight: 800;
 }
 
+.profile-card__content {
+  display: grid;
+  align-content: start;
+}
+
 .profile-list {
   display: grid;
   gap: 12px;
@@ -761,7 +766,7 @@ textarea {
 }
 
 .profile-card__actions {
-  margin-top: 24px;
+  padding-top: 28px;
 }
 
 .profile-list dd {
