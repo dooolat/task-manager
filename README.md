@@ -166,8 +166,8 @@ npm run dev
 
 ### Live Links
 
-- Frontend: TODO
-- Backend API: TODO
+- Frontend: https://task-manager-frontend-6q45els11-dulat.vercel.app/
+- Backend API: https://task-manager-backend-i9ac.onrender.com
 
 ### Database on MongoDB Atlas
 
