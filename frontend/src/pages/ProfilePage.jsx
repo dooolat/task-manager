@@ -17,22 +17,24 @@ export const ProfilePage = () => {
       </section>
 
       <Card className="profile-card">
-        <div className="profile-card__avatar">{getInitials(user?.name || 'User')}</div>
-        <div className="profile-card__content">
-          <h2>{user?.name || 'Account'}</h2>
-          <p>{user?.email || 'Not available'}</p>
-          <dl className="profile-list">
-            <div>
-              <dt>Account created</dt>
-              <dd>{formatDateTime(user?.createdAt)}</dd>
-            </div>
-            <div>
-              <dt>Account updated</dt>
-              <dd>{formatDateTime(user?.updatedAt)}</dd>
-            </div>
-          </dl>
-
+        <div className="profile-card__summary">
+          <div className="profile-card__avatar">{getInitials(user?.name || 'User')}</div>
+          <div className="profile-card__identity">
+            <h2>{user?.name || 'Account'}</h2>
+            <p>{user?.email || 'Not available'}</p>
+          </div>
         </div>
+
+        <dl className="profile-list">
+          <div>
+            <dt>Account created</dt>
+            <dd>{formatDateTime(user?.createdAt)}</dd>
+          </div>
+          <div>
+            <dt>Account updated</dt>
+            <dd>{formatDateTime(user?.updatedAt)}</dd>
+          </div>
+        </dl>
 
         <div className="profile-card__footer">
           <Button variant="danger" onClick={logout}>
