@@ -13,8 +13,8 @@ export const taskIdParamSchema = Joi.object({
 
 export const taskListQuerySchema = Joi.object({
   search: Joi.string().trim().max(120).allow(''),
-  status: taskStatusSchema,
-  priority: taskPrioritySchema,
+  status: taskStatusSchema.empty(''),
+  priority: taskPrioritySchema.empty(''),
   page: Joi.number().integer().min(1).default(1),
   limit: Joi.number().integer().min(1).max(100).default(10)
 });
@@ -36,4 +36,3 @@ export const updateTaskSchema = Joi.object({
   dueDate: Joi.date().allow(null, ''),
   categoryId: objectIdSchema.allow(null, '')
 }).min(1);
-

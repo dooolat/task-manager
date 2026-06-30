@@ -1,7 +1,12 @@
 import api from './api.js';
 
+const cleanTaskParams = (params = {}) =>
+  Object.fromEntries(
+    Object.entries(params).filter(([, value]) => value !== '' && value !== null && value !== undefined)
+  );
+
 export const getTasksRequest = async (params) => {
-  const response = await api.get('/tasks', { params });
+  const response = await api.get('/tasks', { params: cleanTaskParams(params) });
   return response.data;
 };
 
@@ -29,4 +34,3 @@ export const deleteTaskRequest = async (id) => {
   const response = await api.delete(`/tasks/${id}`);
   return response.data;
 };
-

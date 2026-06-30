@@ -760,6 +760,10 @@ textarea {
   font-weight: 700;
 }
 
+.profile-card__actions {
+  margin-top: 24px;
+}
+
 .profile-list dd {
   margin: 0;
   color: var(--text-muted);

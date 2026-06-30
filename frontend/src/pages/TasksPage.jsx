@@ -56,19 +56,24 @@ export const TasksPage = () => {
     writeStoredValue('task-manager-filters', filters);
   }, [filters]);
 
+  const loadCategories = async () => {
+    try {
+      const categoryData = await getCategoriesRequest();
+      setCategories(categoryData || []);
+    } catch (err) {
+      error(getErrorMessage(err));
+    }
+  };
+
   const loadTasks = async () => {
     setLoading(true);
     setPageError('');
 
     try {
-      const [taskResponse, categoryData] = await Promise.all([
-        getTasksRequest(filters),
-        getCategoriesRequest()
-      ]);
+      const taskResponse = await getTasksRequest(filters);
 
       setTasks(taskResponse.data || []);
       setPagination(taskResponse.meta || null);
-      setCategories(categoryData || []);
     } catch (err) {
       const message = getErrorMessage(err);
       setPageError(message);
@@ -81,6 +86,10 @@ export const TasksPage = () => {
   useEffect(() => {
     loadTasks().catch(() => {});
   }, [filters]);
+
+  useEffect(() => {
+    loadCategories().catch(() => {});
+  }, []);
 
   const handleFilterChange = (field, value) => {
     if (field === 'search') {
@@ -115,6 +124,7 @@ export const TasksPage = () => {
 
       setSelectedTask(null);
       await loadTasks();
+      await loadCategories();
     } catch (err) {
       const message = getErrorMessage(err);
       error(message);
