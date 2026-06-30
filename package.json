@@ -1,0 +1,17 @@
+{
+  "name": "task-manager-full-stack",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "npm run build --workspace frontend",
+    "start": "npm run start --workspace backend"
+  },
+  "dependencies": {
+    "mongodb": "^7.4.0"
+  }
+}
