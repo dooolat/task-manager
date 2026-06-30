@@ -166,8 +166,34 @@ npm run dev
 
 ### Live Links
 
-- Frontend: https://task-manager-frontend-6q45els11-dulat.vercel.app/
+- Frontend: https://task-manager-frontend-coral-rho.vercel.app
 - Backend API: https://task-manager-backend-i9ac.onrender.com
+
+### Screenshots
+
+#### Login
+
+![Login page](docs/screenshots/login.jpg)
+
+#### Registration
+
+![Registration page](docs/screenshots/register.jpg)
+
+#### Dashboard
+
+![Dashboard page](docs/screenshots/dashboard.jpg)
+
+#### Tasks
+
+![Tasks page](docs/screenshots/tasks.jpg)
+
+#### Categories
+
+![Categories page](docs/screenshots/categories.jpg)
+
+#### Profile
+
+![Profile page](docs/screenshots/profile.jpg)
 
 ### Database on MongoDB Atlas
 
